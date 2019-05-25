@@ -1,5 +1,7 @@
+$channel-list-width: 20%;
+
 .channel-list {
-  width: 20%;
+  width: $channel-list-width;
   height: 100%;
   border: 1px solid red;
 }

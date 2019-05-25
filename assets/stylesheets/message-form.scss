@@ -1,0 +1,8 @@
+.message-form {
+  border: 1px solid purple;
+  position: absolute;
+  height: 100px;
+  width: 100% - $channel-list-width;
+  bottom: 0;
+  right: 0;
+}

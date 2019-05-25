@@ -22,10 +22,12 @@ class MessageForm extends Component {
 
   render() {
     return (
-      <form handleSubmit={this.handleSubmit} className="message-form">
+      <form onSubmit={this.handleSubmit} className="message-form">
         <input type="text" placeholder="Type your message!" onChange={this.handleChange} value={this.state.userInput}/>
         <input type="submit" value="Send!"/>
       </form>
     )
   }
 }
+
+export default MessageForm;
