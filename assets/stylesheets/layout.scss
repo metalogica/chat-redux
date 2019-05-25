@@ -1,7 +1,8 @@
-@import './channel-list.scss';
-@import './message-list.scss';
-@import './message-form.scss';
+// Layout Variables
+$channel-list-width: 20%;
+$message-form-width: 100% - $channel-list-width;
 
+// Core Layout
 body {
   font-family: Helvetica;
   color: black;
@@ -11,3 +12,4 @@ body {
   height: 100vh;
   display: flex;
 }
+
