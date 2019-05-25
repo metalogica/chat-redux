@@ -8,11 +8,30 @@ import reduxPromise from 'redux-promise';
 
 // internal modules
 import App from './components/app';
-import '../assets/stylesheets/application.scss';
+import '../assets/application.scss';
+
+// initital state
+// const currentUser = window.prompt('Please Enter your username:');
+const currentUser = 'richard'
+const channelList = ['Libra', 'Aquarius', 'Gemini'];
+import messageList from './data/messageList.js'
+const initialState = {
+  messageList: messageList,
+  channelList: channelList,
+  selectedChannel: channelList[0],
+  currentUser: currentUser
+}
 
 // State and reducers
+import messageListReducer from './reducers/message_list_reducer.js';
+import channelListReducer from './reducers/channel_list_reducer.js';
+import selectedChannelReducer from './reducers/selected_channel_reducer.js';
+import currentUserReducer from './reducers/current_user_reducer.js';
 const reducers = combineReducers({
-  changeMe: (state = null, action) => state
+  messageList: messageListReducer,
+  channelList: channelListReducer,
+  selectedChannel: selectedChannelReducer,
+  currentUser: currentUserReducer
 });
 
 // Middleware
@@ -21,9 +40,10 @@ const middleware = composeEnhancers(applyMiddleware(logger, reduxPromise))
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, middleware)}>
+  <Provider store={createStore(reducers, initialState, middleware)}>
     <App />
   </Provider>,
   document.getElementById('root')
 );
+
 
