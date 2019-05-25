@@ -1,7 +1,12 @@
+@import './channel-list.scss';
+@import './message-list.scss';
+
 body {
   font-family: Helvetica;
+  color: black;
 }
 .app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
 }

@@ -1,0 +1,15 @@
+.message-list {
+  border: 1px solid green;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.message {
+  border: 1px solid blue;
+  width: 100%;
+  height: 100px;
+}
