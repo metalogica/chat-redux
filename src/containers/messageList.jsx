@@ -8,10 +8,6 @@ class MessageList extends Component {
     super(props)
   }
 
-  // componentWillMount() {
-  //   this.props.messageList()
-  // }
-
   render() {
     return (
       <div className="message-list">
