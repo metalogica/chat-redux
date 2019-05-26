@@ -20,9 +20,10 @@ class MessageList extends Component {
   }
 
   render() {
+    const messageList = this.props.messageList.filter( message => message.channel === this.props.selectedChannel )
     return (
       <div className="message-list">
-        {this.props.messageList.map( (message, index) => { return <Message key={index} message={message}/> })}
+        {messageList.map( (message, index) => { return <Message key={index} message={message}/> })}
       </div>
     )
   }
@@ -30,7 +31,8 @@ class MessageList extends Component {
 
 function mapStateToProps(state) {
   return {
-    messageList: state.messageList
+    messageList: state.messageList,
+    selectedChannel: state.selectedChannel
   }
 }
 

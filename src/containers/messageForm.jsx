@@ -24,17 +24,10 @@ class MessageForm extends Component {
     // alert('A name was submitted: ' + this.state.userInput)
     let time = new Date();
     time = time.toString();
-    const author = this.props.currentUser || 'richard';
+    const author = this.props.currentUser || 'Anonymous';
     const body = this.state.userInput;
-    // debugger
-    // console.log(this.props.addMessage(body, author, time))
-    this.props.addMessage(body, author, time)
-    const messages = fetch('https://wagon-chat.herokuapp.com/general/messages')
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data.messages);
-      });
-    console.log(messages)
+    const channel = this.props.selectedChannel;
+    this.props.addMessage(body, author, time, channel)
   }
 
   render() {
@@ -50,6 +43,7 @@ class MessageForm extends Component {
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
+    selectedChannel: state.selectedChannel
   }
 }
 
