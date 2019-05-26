@@ -23,7 +23,10 @@ class ChannelList extends Component {
     return (
       <div className="channel-list">
         <ul>
-          {Object.values(this.props.channelList).map( (channel,index) => { return <li key={index} onClick={this.handleClick}>{channel}</li> })}
+          {Object.values(this.props.channelList).map( (channel,index) => {
+            let icon = this.props.channelIcons.get(channel.toLowerCase())
+            return <li key={index} onClick={this.handleClick}><span id={channel}>{icon}</span>{channel}</li>
+          })}
         </ul>
       </div>
     )
@@ -32,7 +35,8 @@ class ChannelList extends Component {
 
 function mapStateToProps(state) {
   return {
-    channelList: state.channelList
+    channelList: state.channelList,
+    channelIcons: state.channelIcons
   }
 }
 

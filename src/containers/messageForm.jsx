@@ -22,8 +22,7 @@ class MessageForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     // alert('A name was submitted: ' + this.state.userInput)
-    let time = new Date();
-    time = time.toString();
+    let time = new Date().toString().split(' ').slice(0,5).join(' ');
     const author = this.props.currentUser || 'Anonymous';
     const body = this.state.userInput;
     const channel = this.props.selectedChannel;
@@ -33,8 +32,8 @@ class MessageForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="message-form">
-        <input type="text" placeholder="Type your message!" onChange={this.handleChange} value={this.state.userInput}/>
-        <input type="submit" value="Send!"/>
+        <input id="message-field" type="text" placeholder="Type your message!" onChange={this.handleChange} value={this.state.userInput}/>
+        <input id="message-btn" type="submit" value="Send!"/>
       </form>
     )
   }

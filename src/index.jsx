@@ -14,11 +14,17 @@ import '../assets/application.scss';
 // const currentUser = window.prompt('Please Enter your username:');
 const currentUser = 'richard'
 const channelList = ['Libra', 'Aquarius', 'Gemini'];
+const channelIcons = new Map([
+  ['libra', '\u264E'],
+  ['aquarius', '\u2652'],
+  ['gemini', '\u264A']
+  ]);
 const selectedChannel = channelList[0].toLowerCase()
 import messageList from './data/messageList.js'
 const initialState = {
   messageList: messageList,
   channelList: channelList,
+  channelIcons: channelIcons,
   selectedChannel: selectedChannel,
   currentUser: currentUser
 }

@@ -1,8 +1,18 @@
 .message-form {
   border: 1px solid purple;
   position: absolute;
-  height: 100px;
-  width: $message-form-width;
+  height: 6rem;
+  width: $message-container-width;
   bottom: 0;
   right: 0;
+
+  display: flex;
+  #message-field {
+    flex: 0 0 90%;
+  }
+  #message-btn {
+    flex: 0 0 10%;
+  }
 }
+
+

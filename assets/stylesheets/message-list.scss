@@ -1,6 +1,6 @@
 .message-list {
   border: 1px solid green;
-  width: 80%;
+  width: $message-container-width;
   height: 100%;
   display: flex;
   flex-direction: column;
