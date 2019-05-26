@@ -24,11 +24,17 @@ class MessageForm extends Component {
     // alert('A name was submitted: ' + this.state.userInput)
     let time = new Date();
     time = time.toString();
-    const author = 'richard';
+    const author = this.props.currentUser || 'richard';
     const body = this.state.userInput;
     // debugger
-    // console.log(this.props.addMessage(message, user, date))
+    // console.log(this.props.addMessage(body, author, time))
     this.props.addMessage(body, author, time)
+    const messages = fetch('https://wagon-chat.herokuapp.com/general/messages')
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data.messages);
+      });
+    console.log(messages)
   }
 
   render() {
