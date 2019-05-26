@@ -1,10 +1,21 @@
 .channel-list {
   width: $channel-list-width;
   height: 100%;
-  border: 1px solid red;
+  font-size: 2rem;
+  background-color: black;
+  opacity: 0.8;
 
   ul {
+    margin-top: 3rem;
     list-style: none;
+  }
+
+  ul::before {
+    content: 'Channel List';
+  }
+
+  li:hover {
+    font-weight: 900;
   }
 
   #libra {
@@ -14,5 +25,11 @@
   }
 
   #aquarius {
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .channel-list {
+    display: none;
   }
 }

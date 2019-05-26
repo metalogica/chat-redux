@@ -11,8 +11,7 @@ import App from './components/app';
 import '../assets/application.scss';
 
 // initial state
-// const currentUser = window.prompt('Please Enter your username:');
-const currentUser = 'richard'
+const currentUser = window.prompt('Please Enter your username:') || 'Anonymous'
 const channelList = ['Libra', 'Aquarius', 'Gemini'];
 const channelIcons = new Map([
   ['libra', '\u264E'],
@@ -34,9 +33,11 @@ import messageListReducer from './reducers/message_list_reducer.js';
 import channelListReducer from './reducers/channel_list_reducer.js';
 import selectedChannelReducer from './reducers/selected_channel_reducer.js';
 import currentUserReducer from './reducers/current_user_reducer.js';
+import channelIconsReducer from './reducers/channel_icons_reducer.js';
 const reducers = combineReducers({
   messageList: messageListReducer,
   channelList: channelListReducer,
+  channelIcons: channelIconsReducer,
   selectedChannel: selectedChannelReducer,
   currentUser: currentUserReducer
 });

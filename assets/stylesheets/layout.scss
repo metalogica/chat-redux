@@ -1,15 +1,19 @@
 // Layout Variables
 $channel-list-width: 15%;
 $message-container-width: 100% - $channel-list-width;
+$background-image-url: 'https://images.unsplash.com/photo-1524654458049-e36be0721fa2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80';
 
 // Core Layout
 body {
   font-family: Helvetica;
-  color: black;
+  color: white;
 }
 .app {
   width: 100vw;
   height: 100vh;
   display: flex;
+  background-image: url($background-image-url);
+  background-position: center;
+  background-size: cover;
 }
 

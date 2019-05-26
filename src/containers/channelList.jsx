@@ -15,7 +15,8 @@ class ChannelList extends Component {
   }
 
   handleClick = (event) => {
-    const channel = event.currentTarget.innerText.toLowerCase()
+    const channel = event.currentTarget.innerText.toLowerCase().replace(/\W/, "");
+    console.log(channel)
     this.props.changeChannel(channel)
   }
 
