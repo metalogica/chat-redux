@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+// Actions
+import { addMessage } from '../actions/actions_index.js';
 
 class MessageForm extends Component {
   constructor(props) {
@@ -17,7 +21,14 @@ class MessageForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    alert('A name was submitted: ' + this.state.userInput)
+    // alert('A name was submitted: ' + this.state.userInput)
+    let time = new Date();
+    time = time.toString();
+    const author = 'richard';
+    const body = this.state.userInput;
+    // debugger
+    // console.log(this.props.addMessage(message, user, date))
+    this.props.addMessage(body, author, time)
   }
 
   render() {
@@ -30,4 +41,17 @@ class MessageForm extends Component {
   }
 }
 
-export default MessageForm;
+function mapStateToProps(state) {
+  return {
+    currentUser: state.currentUser,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { addMessage: addMessage },
+    dispatch
+  )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessageForm);

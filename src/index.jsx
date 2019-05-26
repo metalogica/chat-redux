@@ -10,7 +10,7 @@ import reduxPromise from 'redux-promise';
 import App from './components/app';
 import '../assets/application.scss';
 
-// initital state
+// initial state
 // const currentUser = window.prompt('Please Enter your username:');
 const currentUser = 'richard'
 const channelList = ['Libra', 'Aquarius', 'Gemini'];
